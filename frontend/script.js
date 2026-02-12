@@ -1,5 +1,5 @@
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
     const contactData = {
         name: document.getElementById("name").value,
@@ -9,19 +9,26 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         message: document.getElementById("message").value
     };
 
-    fetch("http://localhost:8080/api/contact", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(contactData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("Contact saved successfully!");
-        console.log(data);
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
+    try {
+        const response = await fetch("http://localhost:8080/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(contactData)
+        });
+
+        if (response.ok) {
+            document.getElementById("responseMessage").innerText =
+                "✅ Inquiry sent successfully! Our team will contact you soon.";
+            document.getElementById("contactForm").reset();
+        } else {
+            document.getElementById("responseMessage").innerText =
+                "❌ Something went wrong. Please try again.";
+        }
+
+    } catch (error) {
+        document.getElementById("responseMessage").innerText =
+            "⚠ Server not reachable. Make sure backend is running.";
+    }
 });

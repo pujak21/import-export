@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #0f4d2c;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: white;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #cfe9d8;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+.header-btn {
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.shop {
+    background: #ffcc00;
+    color: black;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    background: linear-gradient(135deg, #0f4d2c, #1c7a4b);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    padding: 12px 28px;
+    margin: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: #ffcc00;
+    color: black;
+}
+
+.secondary-btn {
+    background: white;
+    color: #0f4d2c;
+}
+
+/* ================= SECTION COMMON ================= */
+
+section {
+    padding: 70px 10%;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #0f4d2c;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 15px 0 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.product-card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #d4af37;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= WHY CHOOSE ================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.why-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-weight: 500;
+}
+
+/* ================= CERTIFICATIONS ================= */
+
+.certifications {
+    background: #f0f6f2;
+    padding: 60px 10%;
+}
+
+.cert-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.badge {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0f4d2c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+
+
+
+.hero {
+  background: linear-gradient(135deg, #0f3d2e, #1f6f43);
+  color: white;
+  padding: 80px 10%;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #f5c542;
+}
+
+.hero-text h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  padding: 12px 22px;
+  margin-right: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #f5c542;
+  color: black;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1f6f43;
+}
+
+.hero-image img {
+  max-width: 350px;
+}
+
+
+/* HEADER */
+header {
+    background: #0f3d2e;
+    padding: 15px 50px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(to right, #145c3a, #1f7a4d);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+
+
+
+
+.contact-section {
+    background: #f4f4f4;
+    padding: 80px 20px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #145c3a;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 12px;
+    background: #c9a227;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container button:hover {
+    background: #a8841f;
+}
+
+#responseMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+.about {
+    background: #f8f9f8;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #145c3a;
+    margin-bottom: 20px;
+}
+
+.about-highlight {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    font-weight: 500;
+    color: #145c3a;
+}
+
+.coming-soon {
+    margin-top: 30px;
+    font-style: italic;
+    color: #777;
+}
+
