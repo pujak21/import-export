@@ -10,26 +10,82 @@
     <div class="contact-container">
 
         <h2>Bulk / Export Inquiry</h2>
-        <p>Partner with Turmexa Organic for premium Lakadong Turmeric & Moringa exports. 
-        We support bulk orders, private labeling & global documentation.</p>
+        <p>
+            Partner with Turmexa Organic for premium Lakadong Turmeric & Moringa exports.
+            We support bulk orders, private labeling & global documentation.
+        </p>
 
         <form id="contactForm">
 
             <input type="text" id="name" placeholder="Full Name" required>
+
             <input type="email" id="email" placeholder="Email" required>
+
             <input type="text" id="country" placeholder="Country">
+
             <input type="text" id="serviceNeeded" placeholder="Product Needed (Turmeric / Moringa)">
+
             <textarea id="message" placeholder="Message"></textarea>
 
-            <button type="submit">Send Inquiry</button>
+            <button type="submit" id="submitBtn">Send Inquiry</button>
 
         </form>
 
-        <p id="responseMessage"></p>
+        <p id="responseMessage" class="response-message"></p>
 
     </div>
 </section>
 
-<script src="script.js"></script>
+<script>
+const form = document.getElementById("contactForm");
+const responseMessage = document.getElementById("responseMessage");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    const contactData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        country: document.getElementById("country").value,
+        serviceNeeded: document.getElementById("serviceNeeded").value,
+        message: document.getElementById("message").value
+    };
+
+    try {
+        const response = await fetch("http://localhost:8080/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(contactData)
+        });
+
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        responseMessage.style.color = "green";
+        responseMessage.innerText = "✅ Inquiry sent successfully! Our team will contact you soon.";
+
+        form.reset();
+
+    } catch (error) {
+        responseMessage.style.color = "red";
+        responseMessage.innerText = "❌ Something went wrong. Please try again.";
+
+        console.error("Error:", error);
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Send Inquiry";
+});
+</script>
+
 </body>
 </html>

@@ -16,15 +16,23 @@
         </div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Products</a>
-            <a href="#">Certifications</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#cert">Certifications</a>
             <a href="#">Export</a>
             <a href="contact.html">Contact</a>
         </nav>
         <div class="header-buttons">
-            <button class="whatsapp">WhatsApp</button>
-            <button class="shop">Shop Now</button>
+            <div class="nav-buttons">
+    <a href="https://wa.me/918083669208" target="_blank" class="btn whatsapp-btn">
+        WhatsApp
+    </a>
+
+    <a href="#products" class="btn shop-btn">
+        Shop Now
+    </a>
+</div>
+
         </div>
     </header>
 
@@ -53,102 +61,108 @@
   </div>
 </section>
 
-
-<!-- ABOUT SECTION -->
-<section class="about">
+<section id="about"  class="about-section">
     <div class="about-container">
         <h2>About Turmexa Organic</h2>
 
-        <p class="about-highlight">
-            Turmexa Organic is a premium wellness brand by <strong>Kailash Overseas</strong>, 
-            dedicated to exporting India’s finest organic superfoods to global markets.
+        <p class="about-intro">
+            <strong>Turmexa Organic</strong> is a premium wellness brand by 
+            <strong>Kailash Overseas</strong>, committed to exporting India’s finest
+            organic superfoods to global markets.
         </p>
 
         <p>
-            We specialize in high-curcumin Lakadong Turmeric and nutrient-rich Moringa, 
-            carefully sourced from trusted Indian farms. Our products are naturally processed, 
-            lab-tested, and prepared to meet international export standards.
+            We specialize in high-curcumin Lakadong Turmeric and nutrient-rich
+            Moringa, carefully sourced from trusted Indian farms. Our products
+            are naturally processed, lab-tested, and aligned with international
+            export standards.
         </p>
 
-        <p>
-            With a strong focus on purity, traceability, and bulk export reliability, 
-            we support distributors, wholesalers, and private-label brands worldwide.
-        </p>
-
-        <div class="about-features">
-            <div>✔ 100% Natural & Chemical Free</div>
-            <div>✔ Lab Tested & Export Grade</div>
-            <div>✔ Bulk & Private Label Support</div>
-            <div>✔ Global Documentation Assistance</div>
+        <div class="about-highlights">
+            <div class="highlight">✔ 100% Natural & Chemical-Free</div>
+            <div class="highlight">✔ Lab Tested & Export Grade</div>
+            <div class="highlight">✔ Bulk & Private Label Support</div>
+            <div class="highlight">✔ Global Documentation Assistance</div>
         </div>
-
-        <p class="coming-soon">
-            🌿 Soon we will be available with a complete range of organic superfoods.
-        </p>
     </div>
 </section>
 
 
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
+
+
+  <section id="products" class="products-section">
     <h2>Our Premium Products</h2>
 
-    <div class="product-grid">
+    <div class="products-grid">
 
-        <!-- Turmeric Product -->
         <div class="product-card">
-            <img src="images/turmeric.jpeg" alt="Lakadong Turmeric Powder">
-            <h3>Organic Lakadong Turmeric Powder</h3>
+            <img src="images/turmeric.jpeg" alt="Lakadong Turmeric">
+            <h3>Organic Lakadong Turmeric</h3>
             <p>High Curcumin • Rich Golden Color • Export Quality</p>
-            <a href="contact.html" class="btn-secondary">Bulk Inquiry</a>
+            <a href="contact.html" class="product-btn">Bulk Inquiry</a>
         </div>
 
-        <!-- Moringa Product -->
         <div class="product-card">
             <img src="images/moringa.jpeg" alt="Moringa Powder">
             <h3>Organic Moringa Powder</h3>
-            <p>Nutrient-Rich • Plant-Based Protein • Superfood Grade</p>
-            <a href="#contact" class="btn-secondary">Bulk Inquiry</a>
+            <p>Nutrient Rich • Naturally Dried • Premium Grade</p>
+            <a href="contact.html" class="product-btn">Bulk Inquiry</a>
         </div>
 
     </div>
-
-    <p class="coming-soon">
-        🌿 Soon we will be available with a complete range of organic superfoods.
-    </p>
 </section>
 
 
+
     <!-- WHY CHOOSE US -->
-    <section>
+    <section class="why-section">
+
     <h2>Why Choose Turmexa Organic</h2>
 
     <div class="why-grid">
-        <div class="why-box">100% Natural & Pure</div>
-        <div class="why-box">Lab Tested Quality</div>
-        <div class="why-box">Export Documentation Support</div>
-        <div class="why-box">Bulk & Private Label Available</div>
+        <div class="why-card">
+            <h3>100% Natural & Pure</h3>
+            <p>Ethically sourced from trusted Indian farms with zero chemical processing.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Lab-Tested Quality</h3>
+            <p>Each batch undergoes strict quality testing to meet international standards.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Export Documentation Support</h3>
+            <p>Complete assistance with certifications, compliance, and global logistics.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Bulk & Private Labeling</h3>
+            <p>Customized packaging and private labeling solutions for global partners.</p>
+        </div>
     </div>
-    </section>
 
-
-    <!-- CERTIFICATIONS -->
-    <section class="certifications">
-    <h2>Certifications</h2>
-
-    <div class="cert-badges">
-        <div class="badge">FSSAI Certified</div>
-        <div class="badge">Lab Tested</div>
-        <div class="badge">Organic Certification (Coming Soon)</div>
+    <div  id="cert" class="certification-section">
+        <h3>Certifications</h3>
+        <div class="cert-badges">
+            <span>FSSAI Certified</span>
+            <span>Lab Tested</span>
+            <span>Organic Certification (Coming Soon)</span>
+        </div>
     </div>
-    </section>
+
+</section>
+
+
+
+   
 
 
     <!-- CTA -->
-    <section class="cta">
-        <h2>Ready to Partner With Turmexa Organic?</h2>
-        <button>Get Export Quote</button>
-    </section>
+   <div class="cta-section">
+    <h2>Ready to Partner With Turmexa Organic?</h2>
+    <a href="contact.html">Get Export Quote</a>
+   </div>
+
 
     <!-- FOOTER -->
     <footer>
