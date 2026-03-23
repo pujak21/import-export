@@ -9,7 +9,7 @@ import com.puja.importexport.service.EmailService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*")
 public class ContactController {
 
     @Autowired
@@ -23,10 +23,7 @@ public class ContactController {
 
         Contact savedContact = contactRepository.save(contact);
 
-        // Send email to Admin
         emailService.sendAdminNotification(savedContact);
-
-        // Send confirmation to Customer
         emailService.sendCustomerConfirmation(savedContact);
 
         return savedContact;
