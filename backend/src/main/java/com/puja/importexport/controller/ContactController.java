@@ -9,7 +9,7 @@ import com.puja.importexport.service.EmailService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://import-export-ruddy.vercel.app")
+@CrossOrigin(origins = "*") // temporary for debugging (later restrict)
 public class ContactController {
 
     @Autowired
@@ -21,10 +21,17 @@ public class ContactController {
     @PostMapping("/contact")
     public Contact saveContact(@RequestBody Contact contact) {
 
+        // Save to DB
         Contact savedContact = contactRepository.save(contact);
 
-        emailService.sendAdminNotification(savedContact);
-        emailService.sendCustomerConfirmation(savedContact);
+        try {
+            // Send emails
+            emailService.sendAdminNotification(savedContact);
+            emailService.sendCustomerConfirmation(savedContact);
+        } catch (Exception e) {
+            // Prevent API from failing if email fails
+            System.out.println("Email sending failed: " + e.getMessage());
+        }
 
         return savedContact;
     }
