@@ -6,6 +6,11 @@ This project includes a complete full-stack lead capture and email automation sy
 
 ---
 
+## 🚀 Live Demo
+
+🔗 Frontend: https://import-export-ruddy.vercel.app/  
+🔗 Backend API: https://import-export-da2fi.onrender.com/api/contact
+
 ## 🚀 Features
 
 - 🌿 Brand-focused responsive frontend

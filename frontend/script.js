@@ -10,7 +10,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("http://localhost:9090/api/contact", {
+        const response = await fetch("https://import-export-da2fi.onrender.com/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
