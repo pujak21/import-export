@@ -9,7 +9,7 @@ import com.puja.importexport.service.EmailService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://import-export-ruddy.vercel.app")
 public class ContactController {
 
     @Autowired
