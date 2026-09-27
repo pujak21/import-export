@@ -1,6 +1,16 @@
+# Sanitized reference configuration. Do NOT put real credentials in this file.
+# Supply secrets through environment variables (locally or in Render).
+#
+# Required:
+#   SPRING_DATA_MONGODB_URI  - full MongoDB Atlas connection URI
+#   SPRING_MAIL_PASSWORD     - Gmail App Password for SPRING_MAIL_USERNAME
+#
+# Optional (defaults shown in the properties below):
+#   PORT, SPRING_MAIL_USERNAME, MAIL_ADMIN_RECIPIENT, CORS_ALLOWED_ORIGINS,
+#   CONTACT_RATE_LIMIT_MAX_REQUESTS, CONTACT_RATE_LIMIT_WINDOW_SECONDS, CLIENT_IP_HEADER
+
 server.port=${PORT:8085}
 
-# Spring Boot 4 uses spring.mongodb.* (spring.data.mongodb.uri is no longer supported).
 spring.mongodb.uri=${SPRING_DATA_MONGODB_URI}
 spring.data.mongodb.auto-index-creation=true
 

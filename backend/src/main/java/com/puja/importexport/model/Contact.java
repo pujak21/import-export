@@ -1,5 +1,7 @@
 package com.puja.importexport.model;
 
+import java.time.Instant;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
@@ -16,4 +18,8 @@ public class Contact {
     private String country;
     private String serviceNeeded;
     private String message;
+
+    private Instant createdAt;
+    private boolean adminNotified;
+    private boolean customerNotified;
 }

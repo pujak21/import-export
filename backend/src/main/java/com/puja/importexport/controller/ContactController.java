@@ -1,38 +1,33 @@
 package com.puja.importexport.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.puja.importexport.dto.ContactRequest;
+import com.puja.importexport.dto.ContactResponse;
 import com.puja.importexport.model.Contact;
-import com.puja.importexport.repository.ContactRepository;
-import com.puja.importexport.service.EmailService;
+import com.puja.importexport.service.ContactService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*") // temporary for debugging (later restrict)
 public class ContactController {
 
-    @Autowired
-    private ContactRepository contactRepository;
+    private final ContactService contactService;
 
-    @Autowired
-    private EmailService emailService;
+    public ContactController(ContactService contactService) {
+        this.contactService = contactService;
+    }
 
     @PostMapping("/contact")
-    public Contact saveContact(@RequestBody Contact contact) {
-
-        // Save to DB
-        Contact savedContact = contactRepository.save(contact);
-
-        try {
-            // Send emails
-            emailService.sendAdminNotification(savedContact);
-            emailService.sendCustomerConfirmation(savedContact);
-        } catch (Exception e) {
-            // Prevent API from failing if email fails
-            System.out.println("Email sending failed: " + e.getMessage());
-        }
-
-        return savedContact;
+    public ResponseEntity<ContactResponse> saveContact(@Valid @RequestBody ContactRequest request) {
+        Contact savedContact = contactService.submitInquiry(request);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ContactResponse(savedContact.getId(), "Inquiry received"));
     }
 }
